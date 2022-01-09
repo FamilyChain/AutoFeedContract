@@ -45,7 +45,7 @@ contract AutoFeed is Ownable {
         uint length = from - to;
         uint[] memory _ids = new uint[](length);
         uint[] memory _times = new uint[](length);
-        for (uint i = 0; i < (from - to); i++) {
+        for (uint i = 0; i < length; i++) {
             _ids[i] = num;
             _times[i] = history[num];
             num--;
