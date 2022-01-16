@@ -3,8 +3,9 @@ pragma solidity >=0.4.22 <0.9.0;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
+import "@openzeppelin/contracts/security/Pausable.sol";
 
-contract AutoFeed is Ownable {
+contract AutoFeed is Ownable, Pausable {
     using Counters for Counters.Counter;
     Counters.Counter private ids;
 
@@ -18,19 +19,19 @@ contract AutoFeed is Ownable {
         ids.increment();
     }
 
-    function changeState() external onlyOwner {
-        if (stateAF == true) {
-            stateAF = false;
-        } else {
-            stateAF = true;
-        }
+    function pause() external onlyOwner whenNotPaused {
+        _pause();
+    }
+
+    function unpause() external onlyOwner whenPaused {
+        _unpause();
     }
 
     function showState() external view returns(bool) {
         return stateAF;
     }
 
-    function input() external onlyOwner {
+    function input() external onlyOwner whenNotPaused {
         uint _id = ids.current();
         uint _times = block.timestamp;
         history[_id] = _times;
