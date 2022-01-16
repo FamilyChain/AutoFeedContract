@@ -1,0 +1,54 @@
+Starting migrations...
+======================
+> Network name:    'mumbaitestnet'
+> Network id:      80001
+> Block gas limit: 20000000 (0x1312d00)
+
+
+1_initial_migration.js
+======================
+
+   Deploying 'Migrations'
+   ----------------------
+   > transaction hash:    0x5623168d43b4e62c80eeb935cbcfe77632d4d47ed8d2a64ef87ff2654e20ef55
+   > Blocks: 2            Seconds: 8
+   > contract address:    0x59aE35298d44654A108482e692F39AD1f0F2c191
+   > block number:        23936461
+   > block timestamp:     1642316020
+   > account:             0x954B780B449e45e423bA93F06EcafD553DEe03AF
+   > balance:             0.999374614997748614
+   > gas used:            250154 (0x3d12a)
+   > gas price:           2.500000009 gwei
+   > value sent:          0 ETH
+   > total cost:          0.000625385002251386 ETH
+
+   Pausing for 2 confirmations...
+   ------------------------------
+   > confirmation number: 1 (block: 23936463)
+   > confirmation number: 2 (block: 23936464)
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.000625385002251386 ETH
+
+
+2_deploy_contracts.js
+=====================
+
+   Deploying 'AutoFeed'
+   --------------------
+   > transaction hash:    0x74f2a03c1a16044e5dc41ce58a236a6f1ba92621826f9f3b3f55a74e9c3adb8c
+   > Blocks: 2            Seconds: 8
+   > contract address:    0xEdb39DEd26BA57A6e11e63667c1c3C0659e755C6
+   > block number:        23936469
+   > block timestamp:     1642316052
+   > account:             0x954B780B449e45e423bA93F06EcafD553DEe03AF
+   > balance:             0.997199094989046534
+   > gas used:            824295 (0xc93e7)
+   > gas price:           2.50000001 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00206073750824295 ETH
+
+   Pausing for 2 confirmations...
+   ------------------------------
