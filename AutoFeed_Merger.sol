@@ -228,13 +228,10 @@ contract AutoFeed is Ownable, Pausable {
     using Counters for Counters.Counter;
     Counters.Counter private ids;
 
-    bool private stateAF;
-
     mapping(uint => uint) private history;
     event History(uint indexed id, uint indexed times);
 
     constructor() {
-        stateAF = false;
         ids.increment();
     }
 
@@ -244,10 +241,6 @@ contract AutoFeed is Ownable, Pausable {
 
     function unpause() external onlyOwner whenPaused {
         _unpause();
-    }
-
-    function showState() external view returns(bool) {
-        return stateAF;
     }
 
     function input() external onlyOwner whenNotPaused {
