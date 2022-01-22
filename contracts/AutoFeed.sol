@@ -32,11 +32,14 @@ contract AutoFeed is Ownable, Pausable {
         ids.increment();
     }
 
+    function currentIds() external view returns(uint) {
+        return ids.current();
+    }
+
     function showHistory(uint from, uint to) external view returns(uint[] memory, uint[] memory) {
-        require(from > 0 && to > 0, "ERRSH1");
-        require(from > to, "ERRSH2");
-        uint num = from;
-        uint length = from - to;
+        require(from > 0 && to > 0, "ERRSH");
+        uint num = from > to ? from : to;
+        uint length = from > to ? from - to : to - from;
         uint[] memory _ids = new uint[](length);
         uint[] memory _times = new uint[](length);
         for (uint i = 0; i < length; i++) {
